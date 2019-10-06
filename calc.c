@@ -1,52 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define M main
-#define f(x,y) double f##x(a,b)double a,b;{return a y b;}
-#define g " operator"
-#define h " arg"
-#define i "no"
-#define j "u"
-#define k "!\n"
-#define l "men"
-#define m "%s"
-#define n "%c"
-#define o " "
 
-/*
-Heavily obfuscated implementation of HW1.
-Compile it and us it to test the input/output, 
-but I do NOT suggest trying to understand or emulate
-the code below.
-*/
 
-typedef double d;
-typedef char c;
-c*um=j m n n n":"n m g"[+-*/]"h"1"h"2"m;
-c*am=i n n n i j m"h"h j l n m k;
-c*km=j m"k"i"w"m g n"'"n"'"k;
-double (*z[0x100])();
-u(c *a)
-{
-    fprintf(stderr, um, m+1, h[1], h[3], l[1], *g, a, k+1);
-    exit(1);
-}
-f(a,+) f(b,-) f(c,*) f(d,/) M(a, b) c **b;
-{
-    z['+'] = fa;
-    z['-'] = fb;
-    z['x'] = fc;
-    z['/'] = fd;
-    if (a < 4) {
-        fprintf(stderr, am, g[6], *g, l[1], h+3, g[6], m+1);
-        u(*b);
+int main( int argc, char *argv[] )  {
+
+   if(argc == 4 ){  // check to make sure that there are 4 arguments 
+
+        char operator = *argv[1]; // the * converts pointer val to real var  
+
+        double num1 = atof(argv[2]);  // strings need to be poitning to a pointer array 
+        double num2 = atof(argv[3]);  
+
+        printf("\n%f", num1);  // printing out the values 
+        printf("%c", operator);
+        printf("%f\n", num2);
+
+        double answer = 0;  // declaring answer as a double 
+
+
+        if(operator == '+'){      // checking that operator is plus
+            answer = num1+num2;   // adds it and puts it into answer variable
+            printf(" = %f\n",answer);  // prints the answer 
+
+        }
+        else if(operator == '-'){  // checking that operator is minus
+            answer = num1-num2;    // subtracts it and puts it into answer variable
+            printf(" = %f\n",answer);  // prints the answer 
+
+        }
+        else if(operator == 'x'){  // checking that operator is times
+            answer = num1*num2;    // muliplies it and puts it into answer variable
+            printf(" = %f\n",answer);  // prints the answer 
+
+        }
+        else if(operator == '/'){  // checking that operator is divide
+            answer = num1/num2;    // divides it and puts it into answer variable
+            printf(" = %f\n",answer);  // prints the answer 
+
+        }
+        else{
+            printf("Invalid operator\n");  // prints if operator isnt one of the 4 classified
+        }
+        
+
+    } else {  // if there aren't 4 arguments tell the user that they are doing it wrong
+        printf("Invalid arguments"); 
+
+
     }
-    c f  = **++b;
-    d d1 = atof(*++b);
-    d d2 = atof(*++b);
-    if (0x29 == (f & ~06) && f & 6 || f == 0170) {
-        printf("%g\n", z[f](d1, d2));
-        return 0;
-    }
-    fprintf(stderr, km, l+2, l+2, *g, *b[-2]);
-    u(b[-3]);
 }
